@@ -1,1 +1,7 @@
 /* add home page styles here */
+
+body{
+    background-image: url('../assets/oak-lab.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
