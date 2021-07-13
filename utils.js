@@ -14,3 +14,12 @@ export function constructPokeArray(pokeDataArray) {
     }
     return newPokeArray;
 } 
+
+export function findById(pokeArray, id) {
+    for (let pokemon of pokeArray) {
+        if (pokemon.id === id) {
+            return pokemon;
+        }
+    }
+    return null;
+}

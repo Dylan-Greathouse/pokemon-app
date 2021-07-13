@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import { constructPokeArray } from '../utils.js';
-import { setPokeArray } from '../storage-utils.js';
+import { CURRENT_SESSION, getPokeArray, setPokeArray } from '../storage-utils.js';
 const test = QUnit.test;
 
 // Storage Utils: Need for other functions to work
@@ -167,4 +167,36 @@ test('should set CURRENT_SESSION to stringified pokeArray in local storage', (ex
     const expected = JSON.stringify(fakePokeArray);
     const actual = localStorage.getItem('CURRENT_SESSION');
     expect.deepEqual(expected, actual);
+});
+
+test('does  incrementPokeProp increase property value when called', (expect) => {
+    const fakePokeArray = [
+        {
+            'id': 1,
+            'name': 'bulbasaur',
+            'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
+            'encountered': 0,
+            'caught': 0,
+            'encounteredLast': false
+        },
+        {
+            'id': 2,
+            'name': 'ivysaur',
+            'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png',
+            'encountered': 0,
+            'caught': 0,
+            'encounteredLast': false
+        },
+        {
+            'id': 5,
+            'name': 'charmander',
+            'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
+            'encountered': 0,
+            'caught': 0,
+            'encounteredLast': false
+        }
+    ]; const pokeString = JSON.stringify(fakePokeArray);
+    localStorage.setItem(CURRENT_SESSION, pokeString);
+    const fakeArray = getPokeArray();
+    expect.deepEqual(fakeArray, fakePokeArray);
 });
