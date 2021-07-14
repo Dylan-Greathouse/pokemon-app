@@ -28,8 +28,9 @@ input + img:hover{
 }
 
 input:checked + img {
+
     border: double rgb(251, 251, 251) 3px;
-    
+  
 }
 
 .btn{
