@@ -1,3 +1,5 @@
+import { getPokeArray } from "./storage-utils.js";
+
 export function constructPokeArray(pokeDataArray) {
     let newPokeArray = [];
     for (let pokeObject of pokeDataArray) {
@@ -22,4 +24,20 @@ export function findById(pokeArray, id) {
         }
     }
     return null;
+}
+
+export function getRandomNumber(range){
+    let randNum = Math.floor(Math.random() * range);
+    return randNum;
+}
+
+
+export function isValid(randNum){
+    const pokeArray = getPokeArray();
+    let pokemon = findById(pokeArray, randNum);
+    if (pokemon.encounteredLast === true){
+        return false;
+    } else {
+        return true;
+    }
 }
