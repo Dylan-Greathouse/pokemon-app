@@ -1,0 +1,18 @@
+.dataImg {
+    height: 200px;
+    width: 200px;
+
+}
+#dataUl{
+    display: flex;
+    flex-wrap: wrap;
+}
+.dataLi {
+    display: flex;
+    flex-direction: column;
+}
+
+.dataDiv {
+    display: flex;
+    flex-direction: column;
+}
