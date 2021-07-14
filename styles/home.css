@@ -5,3 +5,11 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+input {
+    display: none;
+}
+
+input:checked + img {
+    border: solid black 3px;
+}

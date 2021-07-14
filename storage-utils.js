@@ -8,7 +8,7 @@ export function setPokeArray(pokeArray) {
 }
 
 export function getPokeArray() {
-    const pokeString = localStorage.getItem('CURRENT_SESSION');
+    const pokeString = localStorage.getItem(CURRENT_SESSION);
     return JSON.parse(pokeString);
 }
 

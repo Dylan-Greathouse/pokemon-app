@@ -1,4 +1,4 @@
-import { getPokeArray } from "./storage-utils.js";
+import { getPokeArray } from './storage-utils.js';
 
 export function constructPokeArray(pokeDataArray) {
     let newPokeArray = [];
@@ -15,7 +15,7 @@ export function constructPokeArray(pokeDataArray) {
         );
     }
     return newPokeArray;
-} 
+}
 
 export function findById(pokeArray, id) {
     for (let pokemon of pokeArray) {
@@ -34,6 +34,7 @@ export function getRandomNumber(range){
 
 export function isValid(randNum){
     const pokeArray = getPokeArray();
+    if (!findById(pokeArray, randNum)) return false;
     let pokemon = findById(pokeArray, randNum);
     if (pokemon.encounteredLast === true){
         return false;

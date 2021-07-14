@@ -1,22 +1,14 @@
 import pokemon from './assets/pokemon.js'; 
 import { constructPokeArray, findById, getRandomNumber, isValid } from './utils.js';
-import { getPokeArray, setPokeProp } from './storage-utils.js';
-
-// radio variables
-const pokemon1Radio = document.getElementById('pokemon1-radio');
-const pokemon2Radio = document.getElementById('pokemon2-radio');
-const pokemon3Radio = document.getElementById('pokemon3-radio');
-
-// image radios
-const pokemon1Image = document.getElementById('pokemon1-image');
-const pokemon2Image = document.getElementById('pokemon2-image');
-const pokemon3Image = document.getElementById('pokemon3-image');  
+import { getPokeArray, setPokeProp, setPokeArray } from './storage-utils.js';
+import { renderPokemon } from './render-pokemon.js';
 
 const buttonChoice = document.getElementById('choice');
-  
+
 let rounds = 0;
 
-constructPokeArray();
+setPokeArray(constructPokeArray(pokemon));
+
 
 // Render pokemon function main page 
 function whosThatPokemon(){
@@ -31,10 +23,8 @@ function whosThatPokemon(){
         current3.push(findById(pokeArray, randNum));
         setPokeProp(randNum, 'lastEncountered', true);
     } 
-        
-        
-        
-    
+    renderPokemon(current3);
+
 }
 whosThatPokemon();
 
