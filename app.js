@@ -8,7 +8,7 @@ setPokeArray(constructPokeArray(pokemon));
 
 // use find by index rather than find by id
 
-export function newRound() {
+export function newRound(totalRounds = 1) {
     const pokeArray = getPokeArray();
     let currentThree = [];
     for (let i = 0; i < 3; i++) {
@@ -23,7 +23,7 @@ export function newRound() {
     for (let pokemon of currentThree) {
         incrementPokeProp(pokemon.id, 'encountered');
     }
-    renderPokemon(currentThree);
+    renderPokemon(currentThree, totalRounds);
 }
 
 newRound();
