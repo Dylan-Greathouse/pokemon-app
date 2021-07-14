@@ -29,7 +29,7 @@ export function renderPokemon(current3, totalRounds) {
         incrementPokeProp(Number(selected.value), 'caught');
         updateEncntrdLast(
             [current3[0].id, current3[1].id, current3[2].id]);
-        if (totalRounds < 1){
+        if (totalRounds < 4){
             totalRounds++;
             newRound(totalRounds);
         } else {
