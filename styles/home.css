@@ -20,17 +20,20 @@ input {
 
 
 input + img {
-    width: 200px;
+    width: 300px;
     
+}
+input + img:hover{
+    cursor: grab;
 }
 
 input:checked + img {
-    border: solid black 3px;
+    border: double rgb(251, 251, 251) 3px;
     
 }
 
 .btn{
-    margin-top: 100px;
+    margin-top: 200px;
     text-align: center;
 }
 
@@ -39,4 +42,8 @@ input:checked + img {
     font-size: 20px;
     padding: 50px 5px;
     background: linear-gradient(-180deg, red 50%, rgb(251, 251, 251) 50%);
+}
+
+.btn > button:hover{
+    cursor:alias;
 }
