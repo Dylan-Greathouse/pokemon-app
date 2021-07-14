@@ -20,5 +20,4 @@ export function renderPokemon(current3Array) {
     pokemon3Radio.value = current3Array[2]['id'];
     pokemon3Image.src = current3Array[2]['path'];
 
-
 }

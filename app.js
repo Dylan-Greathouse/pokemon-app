@@ -21,7 +21,7 @@ function whosThatPokemon(){
             randNum = getRandomNumber(pokeArray.length);
         }
         current3.push(findById(pokeArray, randNum));
-        setPokeProp(randNum, 'lastEncountered', true);
+        setPokeProp(randNum, 'encounteredLast', true);
     } 
     renderPokemon(current3);
 
