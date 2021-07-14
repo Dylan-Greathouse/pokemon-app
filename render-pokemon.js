@@ -1,23 +1,39 @@
-export function renderPokemon(current3Array) {
-        // radio variables
-    const pokemon1Radio = document.getElementById('pokemon1-radio');
-    const pokemon2Radio = document.getElementById('pokemon2-radio');
-    const pokemon3Radio = document.getElementById('pokemon3-radio');
+import { incrementPokeProp, updateEncntrdLast } from './storage-utils.js';
+import { newRound } from './app.js';
+ 
 
-    // image radios
-    const pokemon1Image = document.getElementById('pokemon1-image');
-    const pokemon2Image = document.getElementById('pokemon2-image');
-    const pokemon3Image = document.getElementById('pokemon3-image');  
+export function renderPokemon(current3) {
 
-
-    pokemon1Radio.value = current3Array[0]['id'];
+    const gym = document.getElementById('gym');
+    const battleArea = document.createElement('div');
+    battleArea.id = 'battle-area';
     
-    pokemon1Image.src = current3Array[0]['path'];
+    for (let i = 0; i < 3; i++) {
+        let label = document.createElement('label');
+        let input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'pokemon';
+        input.value = current3[i].id;
+        let img = document.createElement('img');
+        img.src = current3[i].path;
+        label.append(input, img);
+        battleArea.append(label);
+    }
 
-    pokemon2Radio.value = current3Array[1]['id'];
-    pokemon2Image.src = current3Array[1]['path'];
+    const choiceButton = document.createElement('button');
 
-    pokemon3Radio.value = current3Array[2]['id'];
-    pokemon3Image.src = current3Array[2]['path'];
+    choiceButton.addEventListener('click', () => {
+        const selected = document.querySelector('input:checked + img').previousSibling;
+        incrementPokeProp(Number(selected.value), 'caught');
+        updateEncntrdLast(
+            [current3[0].id, current3[1].id, current3[2].id]);
+        newRound();
+    }); 
+    
+    choiceButton.textContent = 'I choose you!';
+    battleArea.append(choiceButton);
+
+    gym.innerHTML = '';
+    gym.append(battleArea);
 
 }

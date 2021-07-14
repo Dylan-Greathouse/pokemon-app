@@ -34,9 +34,8 @@ export function getRandomNumber(range){
 
 export function isValid(randNum){
     const pokeArray = getPokeArray();
-    if (!findById(pokeArray, randNum)) return false;
-    let pokemon = findById(pokeArray, randNum);
-    if (pokemon.encounteredLast === true){
+    let pokemon = pokeArray[randNum];
+    if (pokemon.encounteredLast === true) {
         return false;
     } else {
         return true;
