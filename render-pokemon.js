@@ -35,20 +35,13 @@ export function renderPokemon(current3, totalRounds) {
         } else {
             window.location.replace('./results/results.html');
         }
-
-        
     }); 
     const btnWrapper = document.createElement('div');
     btnWrapper.append(choiceButton);
 
-
     choiceButton.textContent = '';
     btnWrapper.classList.add('btn');
     
-    
-
     gym.innerHTML = '';
     gym.append(battleArea, btnWrapper);
-
-
 }

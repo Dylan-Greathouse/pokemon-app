@@ -34,10 +34,14 @@ export function getRandomNumber(range){
 
 export function isValid(randNum){
     const pokeArray = getPokeArray();
-    let pokemon = pokeArray[randNum];
-    if (pokemon.encounteredLast === true) {
-        return false;
+    if (pokeArray.indexOf(randNum) !== -1) {
+        let pokemon = pokeArray[randNum];
+        if (pokemon.encounteredLast === true) {
+            return false;
+        } else {
+            return true;
+        }
     } else {
-        return true;
+        return false;
     }
 }

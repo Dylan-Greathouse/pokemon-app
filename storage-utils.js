@@ -19,7 +19,6 @@ export function setPokeProp(id, property, value) {
         }
     }
     setPokeArray(pokeArray);
-
 }
 
 export function incrementPokeProp(id, property) {
