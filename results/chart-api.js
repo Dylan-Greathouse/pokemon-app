@@ -1,4 +1,4 @@
-import { getPokeArray } from '../storage-utils';
+import { getPokeArray } from '../storage-utils.js';
 
 export function mungeEncountered() {
     const pokeArray = getPokeArray();
@@ -31,23 +31,23 @@ export function colorsFromType() {
     for (let pokemon of pokeArray) {
         switch (pokemon.type_1) {
             case 'water':
-                colorsArray.push(''); //water color here
+                colorsArray.push('rgb(85, 205, 252)'); //water color here
                 break;
             case 'fire':
-                colorsArray.push(''); //fire color here
+                colorsArray.push('rgb(157, 2, 8)'); //fire color here
                 break;
             case 'grass':
-                colorsArray.push(''); //bug color here 
+                colorsArray.push('rgb(79, 119, 45)'); //grass color here 
                 break;
             case 'bug':
-                colorsArray.push(''); //bug color here
+                colorsArray.push('rgb(153, 217, 140)'); //bug color here
                 break;
             case 'normal':
-                colorsArray.push(''); //normal color here
+                colorsArray.push('rgb(126, 141, 133)'); //normal color here
                 break;
             default:
         }
-    }
+    } return colorsArray;
 }
 
 export function makeNewChart(names, captured, encountered, colors) {
@@ -59,23 +59,15 @@ export function makeNewChart(names, captured, encountered, colors) {
                 {
                     label: 'Encounters',
                     data: encountered,
-                    backgroundColor: [
-                        // background colors here
-                    ],
-                    borderColor: [
-                        // black
-                    ],
+                    backgroundColor: colors,
+                    borderColor: colors,
                     borderWidth: 1
                 },
                 {
                     label: 'Captures',
                     data: captured,
-                    backgroundColor: [
-                        // background colors
-                    ],
-                    borderColor: [
-                        // black
-                    ],
+                    backgroundColor: colors,
+                    borderColor: colors,
                     borderWidth: 1 
                 }
             ]
