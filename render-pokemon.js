@@ -36,6 +36,7 @@ export function renderPokemon(current3, totalRounds) {
             window.location.replace('./results/results.html');
         }
     }); 
+    
     const btnWrapper = document.createElement('div');
     btnWrapper.append(choiceButton);
 
