@@ -8,8 +8,8 @@ setPokeArray(constructPokeArray(pokemonDataRaw));
 for (let pokemon of pokemonDataRaw) {
     let myImage = document.createElement('img');
     let hidden = document.getElementById('hidden');
-    hidden.style.display = 'none';
     myImage.src = pokemon.path;
+    hidden.style.display = 'none';
     hidden.append(myImage);
 
 }
