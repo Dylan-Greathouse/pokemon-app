@@ -19,13 +19,25 @@ a{
 #dataUl{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .dataLi {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .dataDiv {
     display: flex;
     flex-direction: column;
+}
+
+#play-again {
+    color: darkviolet;
+}
+
+#myChart {
+    display: none;
 }

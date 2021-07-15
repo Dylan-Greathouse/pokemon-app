@@ -6,6 +6,10 @@ body{
     background-repeat: no-repeat;
 }
 
+html, body {
+    height: 100vh;
+}
+
 input {
     display: none;
     
@@ -56,4 +60,10 @@ input:checked + img {
 .btn > button:hover{
     cursor:alias;
 
+}
+
+#rounds {
+    margin: auto;
+    font-size: 4rem;
+    text-align: center;
 }

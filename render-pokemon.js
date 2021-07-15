@@ -8,6 +8,8 @@ export function renderPokemon(current3, totalRounds) {
     const battleArea = document.createElement('div');
     battleArea.id = 'battle-area';
     battleArea.classList.add('pokemon-options');
+    const rounds = document.getElementById('rounds');
+    rounds.innerHTML = `<h1>ROUND ${totalRounds}</h1>`;
     
     for (let i = 0; i < 3; i++) {
         let label = document.createElement('label');
@@ -25,17 +27,19 @@ export function renderPokemon(current3, totalRounds) {
     const choiceButton = document.createElement('button');
 
     choiceButton.addEventListener('click', () => {
-        const selected = document.querySelector('input:checked + img').previousSibling;
-        incrementPokeProp(Number(selected.value), 'caught');
-        updateEncntrdLast(
-            [current3[0].id, current3[1].id, current3[2].id]);
-        if (totalRounds < 9){
-            totalRounds++;
-            newRound(totalRounds);
-        } else {
-            window.location.replace('./results/results.html');
+        if (document.querySelector('input:checked')) {
+            const selected = document.querySelector('input:checked');
+            incrementPokeProp(Number(selected.value), 'caught');
+            updateEncntrdLast(
+                [current3[0].id, current3[1].id, current3[2].id]);
+            if (totalRounds < 10) {
+                totalRounds++;
+                newRound(totalRounds);
+            } else {
+                window.location.replace('./results/results.html');
+            }
         }
-    }); 
+    });
     
     const btnWrapper = document.createElement('div');
     btnWrapper.append(choiceButton);
@@ -45,4 +49,5 @@ export function renderPokemon(current3, totalRounds) {
     
     gym.innerHTML = '';
     gym.append(battleArea, btnWrapper);
+
 }
