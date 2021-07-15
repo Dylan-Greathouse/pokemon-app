@@ -38,3 +38,10 @@ a{
     color: darkviolet;
 }
 
+canvas {
+    color: skyblue;
+}
+.graphs{
+    display: flex;
+    max-width: 50%;
+}
