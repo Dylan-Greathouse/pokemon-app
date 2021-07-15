@@ -114,7 +114,8 @@ test(' construct poke Array func should construct pokemon Array from raw data', 
             'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
             'encountered': 0,
             'caught': 0,
-            'encounteredLast': false
+            'encounteredLast': false,
+            'type': 'grass'
         },
         {
             'id': 2,
@@ -122,7 +123,8 @@ test(' construct poke Array func should construct pokemon Array from raw data', 
             'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png',
             'encountered': 0,
             'caught': 0,
-            'encounteredLast': false
+            'encounteredLast': false,
+            'type': 'grass'
         },
         {
             'id': 5,
@@ -130,7 +132,9 @@ test(' construct poke Array func should construct pokemon Array from raw data', 
             'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
             'encountered': 0,
             'caught': 0,
-            'encounteredLast': false
+            'encounteredLast': false,
+            'type': 'fire'
+
         }
     ];
     const actual = constructPokeArray(fakePokeData);
@@ -308,7 +312,8 @@ test('should return a pokemon from the poke array with the given id', (expect) =
         encounteredLast: false,
         caught: 0,
         path: 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
-        encountered: 0
+        encountered: 0,
+        type: 'grass'
     };
     const actual = findById(pokeArray, 1);
     expect.deepEqual(actual, expected);
@@ -329,7 +334,9 @@ test('getPokeArray should return a well formed pokeArray object', (expect) => {
             'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
             'encountered': 0,
             'caught': 0,
-            'encounteredLast': false
+            'encounteredLast': false,
+            'type': 'grass'
+
         },
         {
             'id': 2,
@@ -337,7 +344,8 @@ test('getPokeArray should return a well formed pokeArray object', (expect) => {
             'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png',
             'encountered': 0,
             'caught': 0,
-            'encounteredLast': false
+            'encounteredLast': false,
+            'type': 'grass'
         },
         {
             'id': 5,
@@ -345,7 +353,8 @@ test('getPokeArray should return a well formed pokeArray object', (expect) => {
             'path': 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
             'encountered': 0,
             'caught': 0,
-            'encounteredLast': false
+            'encounteredLast': false,
+            'type': 'fire'
         }
     ];
     const fakePokeData = [{
