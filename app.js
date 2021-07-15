@@ -5,14 +5,6 @@ import { renderPokemon } from './render-pokemon.js';
 
 setPokeArray(constructPokeArray(pokemonDataRaw));
 
-for (let pokemon of pokemonDataRaw) {
-    let myImage = document.createElement('img');
-    let hidden = document.getElementById('hidden');
-    myImage.src = pokemon.path;
-    hidden.append(myImage);
-    hidden.style.display = 'none';
-}
-
 export function newRound(totalRounds = 1) {
     const pokeArray = getPokeArray();
     let currentThree = [];
