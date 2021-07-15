@@ -7,7 +7,11 @@ setPokeArray(constructPokeArray(pokemonDataRaw));
 
 for (let pokemon of pokemonDataRaw) {
     let myImage = document.createElement('img');
+    let hidden = document.getElementById('hidden');
+    hidden.style.display = 'none';
     myImage.src = pokemon.path;
+    hidden.append(myImage);
+
 }
 
 export function newRound(totalRounds = 1) {
