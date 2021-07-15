@@ -2,6 +2,7 @@ import { getPokeArray } from '../storage-utils.js';
 
 
 var ctx = document.getElementById('myChart').getContext('2d');
+getPokeArray();
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -36,3 +37,5 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+() => myChart;

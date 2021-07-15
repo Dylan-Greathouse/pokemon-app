@@ -20,7 +20,6 @@ export function renderPokeResults(pokemon) {
     const dataImg = document.createElement('img');
     dataImg.classList.add('dataImg');
     dataImg.src = pokemon['path'];
-    console.log(pokemon['path']);
     dataSpan1.textContent = `Encounters: ${pokemon['encountered']}`;
     dataSpan2.textContent = `Captured: ${pokemon['caught']}`;
     dataDiv.append(dataSpan1, dataSpan2);
