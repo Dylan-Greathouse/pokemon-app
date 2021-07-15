@@ -5,6 +5,11 @@ import { renderPokemon } from './render-pokemon.js';
 
 setPokeArray(constructPokeArray(pokemonDataRaw));
 
+for (let pokemon of pokemonDataRaw) {
+    let myImage = document.createElement('img');
+    myImage.src = pokemon.path;
+}
+
 export function newRound(totalRounds = 1) {
     const pokeArray = getPokeArray();
     let currentThree = [];
