@@ -29,7 +29,7 @@ export function renderPokemon(current3, totalRounds) {
         incrementPokeProp(Number(selected.value), 'caught');
         updateEncntrdLast(
             [current3[0].id, current3[1].id, current3[2].id]);
-        if (totalRounds < 4){
+        if (totalRounds < 9){
             totalRounds++;
             newRound(totalRounds);
         } else {
@@ -42,7 +42,7 @@ export function renderPokemon(current3, totalRounds) {
     btnWrapper.append(choiceButton);
 
 
-    choiceButton.textContent = 'I choose you!';
+    choiceButton.textContent = '';
     btnWrapper.classList.add('btn');
     
     

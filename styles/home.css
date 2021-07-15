@@ -28,21 +28,29 @@ input + img:hover{
 }
 
 input:checked + img {
-
     border: double rgb(251, 251, 251) 3px;
+    border-radius: 15%;
   
 }
 
 .btn{
     margin-top: 200px;
     text-align: center;
+    
 }
 
 .btn > button{
-    border-radius: 45%;
-    font-size: 20px;
-    padding: 50px 5px;
-    background: linear-gradient(-180deg, red 50%, rgb(251, 251, 251) 50%);
+    background-image: url('../assets/Capture.PNG');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 200px;
+    border: solid 10px black;
+    border-radius: 50%;
+    
+    
+    
+    
 }
 
 .btn > button:hover{
