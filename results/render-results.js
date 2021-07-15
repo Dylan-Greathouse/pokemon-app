@@ -1,5 +1,5 @@
 import { getPokeArray } from '../storage-utils.js';
-export function resultsData() {
+export function renderResults() {
     const resultsData = document.getElementById('dataUl');
     const pokeArray = getPokeArray();
     for (let pokeElement of pokeArray){

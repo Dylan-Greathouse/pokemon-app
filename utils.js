@@ -10,7 +10,8 @@ export function constructPokeArray(pokeDataArray) {
                 'path': pokeObject.url_image,
                 'encountered': 0,
                 'encounteredLast': false,
-                'caught': 0
+                'caught': 0,
+                'type': pokeObject.type_1
             }
         );
     }
