@@ -1,5 +1,5 @@
 import { getAllSessions } from '../storage-utils.js';
-
+import { renderPokeResults } from '../results/render-results.js';
 
 const allTimeResults = getAllSessions();
 
@@ -23,3 +23,14 @@ function getTopPokemon(allTimeResults) {
     return winners;
 }
 
+
+function renderAllResults(allTimeResults){
+    const winnersUl = document.getElementById('round-winners');
+    const winners = getTopPokemon(allTimeResults);
+    for (let pokemon of winners){
+        winnersUl.appendChild(renderPokeResults(pokemon));
+    } 
+
+
+}
+renderAllResults();
