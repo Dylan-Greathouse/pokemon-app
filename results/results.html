@@ -19,7 +19,11 @@
     <canvas id="myChart2" width="200" height="200"></canvas>
     </div>
 
-    <audio src="../audio/victory.mp3" autoplay="autoplay" loop="loop"></audio>
+    <audio id="victory" src="../audio/victory.mp3" autoplay="autoplay" loop="loop"></audio>
+    <script>
+        const victory = document.getElementById('victory');
+        victory.volume = 0.075;
+    </script>
 </body>
 <script type="module" src="./results.js"></script>
  
