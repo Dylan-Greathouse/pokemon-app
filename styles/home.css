@@ -15,18 +15,16 @@ input {
     
 }
 
-.pokemon-options {
+#battle-area {
     display: flex;
     justify-content: space-between;
 }
-
-
-
 
 input + img {
     width: 300px;
     
 }
+
 input + img:hover{
     cursor: grab;
 }
@@ -37,13 +35,13 @@ input:checked + img {
   
 }
 
-.btn{
+.btn-wrapper {
     margin-top: 200px;
     text-align: center;
     
 }
 
-.btn > button{
+.btn-wrapper > button{
     background-image: url('../assets/Capture.PNG');
     background-size: cover;
     background-position: center;
@@ -57,7 +55,7 @@ input:checked + img {
     
 }
 
-.btn > button:hover{
+.btn-wrapper > button:hover{
     cursor:alias;
 
 }

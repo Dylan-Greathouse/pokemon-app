@@ -7,7 +7,6 @@ export function renderPokemon(current3, totalRounds) {
     const gym = document.getElementById('gym');
     const battleArea = document.createElement('div');
     battleArea.id = 'battle-area';
-    battleArea.classList.add('pokemon-options');
     const rounds = document.getElementById('rounds');
     rounds.innerHTML = `<h1>ROUND ${totalRounds}</h1>`;
     
@@ -18,7 +17,6 @@ export function renderPokemon(current3, totalRounds) {
         input.name = 'pokemon';
         input.value = current3[i].id;
         let img = document.createElement('img');
-        img.classList.add('.');
         img.src = current3[i].path;
         label.append(input, img);
         battleArea.append(label);
@@ -26,9 +24,8 @@ export function renderPokemon(current3, totalRounds) {
 
     const choiceButton = document.createElement('button');
     const btnWrapper = document.createElement('div');
-    choiceButton.textContent = '';
     btnWrapper.append(choiceButton);
-    btnWrapper.classList.add('btn');
+    btnWrapper.classList.add('btn-wrapper');
     gym.innerHTML = '';
     gym.append(battleArea, btnWrapper);
 
