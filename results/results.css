@@ -2,11 +2,11 @@ html {
     background-image: url('../assets/route-.jpg');
     -webkit-background-size: cover;
     background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-a{
+a {
     font-size: 30px;
     color: rgb(56, 176, 215);
 }
@@ -16,7 +16,7 @@ a{
     width: 200px;
 
 }
-#dataUl{
+#dataUl {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -41,7 +41,10 @@ a{
 canvas {
     color: skyblue;
 }
-.graphs{
+
+.graphs {
     display: flex;
     max-width: 50%;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }

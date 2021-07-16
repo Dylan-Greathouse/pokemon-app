@@ -25,6 +25,12 @@ export function renderPokemon(current3, totalRounds) {
     }
 
     const choiceButton = document.createElement('button');
+    const btnWrapper = document.createElement('div');
+    choiceButton.textContent = '';
+    btnWrapper.append(choiceButton);
+    btnWrapper.classList.add('btn');
+    gym.innerHTML = '';
+    gym.append(battleArea, btnWrapper);
 
     choiceButton.addEventListener('click', () => {
         if (document.querySelector('input:checked')) {
@@ -40,14 +46,4 @@ export function renderPokemon(current3, totalRounds) {
             }
         }
     });
-    
-    const btnWrapper = document.createElement('div');
-    btnWrapper.append(choiceButton);
-
-    choiceButton.textContent = '';
-    btnWrapper.classList.add('btn');
-    
-    gym.innerHTML = '';
-    gym.append(battleArea, btnWrapper);
-
 }

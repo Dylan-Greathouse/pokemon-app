@@ -1,4 +1,5 @@
 import { getPokeArray } from '../storage-utils.js';
+
 export function renderResults() {
     const resultsData = document.getElementById('dataUl');
     const pokeArray = getPokeArray();
@@ -10,21 +11,19 @@ export function renderResults() {
 }
 
 export function renderPokeResults(pokemon) {
-    const dataLi = document.createElement('li');
-    dataLi.classList.add('dataLi');
-    const dataDiv = document.createElement('div');
-    dataDiv.classList.add('dataDiv');
-    const dataSpan1 = document.createElement('span');
-    const dataSpan2 = document.createElement('span');
-    const dataImg = document.createElement('img');
-    dataImg.classList.add('dataImg');
-    dataImg.src = pokemon['path'];
-    dataSpan1.textContent = `Encounters: ${pokemon['encountered']}`;
-    dataSpan2.textContent = `Captured: ${pokemon['caught']}`;
-    dataDiv.append(dataSpan1, dataSpan2);
-    dataLi.append(dataImg, dataDiv);
+    const pokeLi = document.createElement('li');
+    pokeLi.classList.add('dataLi');
+    const propValuesWrpr = document.createElement('div');
+    propValuesWrpr.classList.add('dataDiv');
+    const encntrSpan = document.createElement('span');
+    const cptrdSpan = document.createElement('span');
+    const pokeImg = document.createElement('img');
+    pokeImg.classList.add('dataImg');
+    pokeImg.src = pokemon['path'];
+    encntrSpan.textContent = `Encounters: ${pokemon['encountered']}`;
+    cptrdSpan.textContent = `Captured: ${pokemon['caught']}`;
+    propValuesWrpr.append(encntrSpan, cptrdSpan);
+    pokeLi.append(pokeImg, propValuesWrpr);
 
-
-    return dataLi;
-
+    return pokeLi;
 }
