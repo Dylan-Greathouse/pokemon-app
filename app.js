@@ -16,9 +16,7 @@ export function newRound(totalRounds = 1) {
         let randomPokemon = pokeArray[randNum];
         currentThree.push(randomPokemon);
         setPokeProp(randomPokemon.id, 'encounteredLast', true);
-    }
-    for (let pokemon of currentThree) {
-        incrementPokeProp(pokemon.id, 'encountered');
+        incrementPokeProp(randomPokemon.id, 'encountered');
     }
     renderPokemon(currentThree, totalRounds);
 }

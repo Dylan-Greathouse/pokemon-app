@@ -1,6 +1,12 @@
 import { makeNewChart, mungeCaptured, mungeEncountered, mungeNames, colorsFromType } from './chart-api.js';
 import { renderResults } from './render-results.js';
-import { getPokeArray } from '../storage-utils.js';
+import { getAllSessions, getPokeArray, setAllSessions } from '../storage-utils.js';
+
+const allPokeArray = getPokeArray();
+const allSessions = getAllSessions();
+
+allSessions.push(allPokeArray);
+setAllSessions(allSessions);
 
 const pokeArray = getPokeArray().filter(pokemon => pokemon.encountered > 0);
 

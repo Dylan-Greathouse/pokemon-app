@@ -2,6 +2,15 @@
 export const CURRENT_SESSION = 'CURRENT_SESSION';
 export const ALL_SESSIONS = 'ALL_SESSIONS';
 
+export function getAllSessions() {
+    const allSessionsString = localStorage.getItem(ALL_SESSIONS);
+    return JSON.parse(allSessionsString) || [];
+}
+
+export function setAllSessions(allSessionsArray) {
+    localStorage.setItem(ALL_SESSIONS, JSON.stringify(allSessionsArray));
+}
+
 export function setPokeArray(pokeArray) {
     localStorage.setItem(CURRENT_SESSION, JSON.stringify(pokeArray));
 }

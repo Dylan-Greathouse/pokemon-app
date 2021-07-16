@@ -1,6 +1,7 @@
 import { getPokeArray } from '../storage-utils.js';
+
 Chart.defaults.color = 'black';
-Chart.defaults.font.size = 20;
+Chart.defaults.font.size = 14;
 
 export function mungeEncountered(pokeArray) {
     let encounteredArray = [];
@@ -24,25 +25,24 @@ export function mungeNames(pokeArray) {
 }
 
 export function colorsFromType() {
-    // types are grass, fire, water, bug and normal
     let colorsArray = [];
     let pokeArray = getPokeArray();
     for (let pokemon of pokeArray) {
         switch (pokemon.type) {
             case 'water':
-                colorsArray.push('rgba(85, 205, 252, 0.7)'); //water color here
+                colorsArray.push('rgba(85, 205, 252, 0.7)'); 
                 break;
             case 'fire':
-                colorsArray.push('rgba(157, 2, 8, 0.7)'); //fire color here
+                colorsArray.push('rgba(157, 2, 8, 0.7)');
                 break;
             case 'grass':
-                colorsArray.push('rgba(79, 122, 45, 0.8)'); //grass color here 
+                colorsArray.push('rgba(79, 122, 45, 0.8)');
                 break;
             case 'bug':
-                colorsArray.push('rgba(153, 219, 140, 0.9)'); //bug color here
+                colorsArray.push('rgba(153, 219, 140, 0.9)');
                 break;
             case 'normal':
-                colorsArray.push('rgba(126, 141, 133, 0.7)'); //normal color here
+                colorsArray.push('rgba(126, 141, 133, 0.7)');
                 break;
             default:
         }
